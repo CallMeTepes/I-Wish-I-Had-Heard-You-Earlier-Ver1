@@ -1,0 +1,236 @@
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define m = Character("Maya")
+define a = Character("Amy")
+define e = Character("Emily")
+define s = Character("Mr. Smith")
+define f = Character("Frederic")
+image picture_1 = im.Scale("quarto maya canto do espelho4.png", 1920, 1080)
+image picture_2 = im.Scale("quarto maya visao ampla2.png", 1920, 1080)
+image picture_3 = im.Scale("frente escola4.png", 1920, 1080)
+image picture_4 = im.Scale("corredor2.png", 1920, 1080)
+image picture_5 = im.Scale("sala de aula4.png", 1920, 1080)
+image picture_6 = im.Scale("cacifo aberto4.png", 1920, 1080)
+define dissolver = Dissolve(1.0)
+# Hold at black for a bit.
+define fadehold = Fade(0.5, 1.0, 0.5)
+
+# The game starts here.
+
+label start:
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    show picture_1
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    # These display lines of dialogue.
+
+    m "Hi everyone, my name is Maya and I’m one of those kinds of people who are always by the side. And also I’m deaf."
+
+    m "But I wasn’t always deaf. Until my six years old I could listen everything perfectly."
+
+    m "Unfortunately I had some problems and…"
+
+    m "Well…"
+
+    m "I became deaf…"
+
+    m "But I rather not speak of that."
+
+    show picture_2
+
+    menu:
+        "What object do you want to see?"
+
+        "Old Barbie Radio":
+            m "I still remember when I spent my afternoons listening to this old radio..."
+
+        "Comic books":
+            m "I love comics, they make me imagine the voices and sounds..."
+
+        "Old picture of the yonger Maya":
+            m "This picture reminds me of moments when I was more vivid..."
+            m "I was more innocent..."
+            m "I was..."
+            m "I was more..."
+            m "I..."
+
+        "Anime Poster":
+            m "At least I can appreciate this art with my eyes… 3- But it’s a shame couldn’t listen to those magnificente voices and songs…"
+
+    m "It's getting late. I need to go to school."
+
+    menu:
+        "Leave your room":
+            "You leave your evil comfy lair for one more normal and not so happy day of school."
+
+    show picture_3
+
+    m "Another day in Hell :) "
+
+    show picture_4
+
+    "It's so quiet here."
+
+    "Too quiet..."
+
+    show 2 normal
+
+    show 2 falar
+
+    "..."
+
+    "......"
+
+    m "They're trying to say something but I don't understand..."
+
+    m "They look very angry with me. I don't know what I've done..."
+
+    "!!!!!!!!!"
+
+    m "Did I make a gesture that they didn't like?!"
+
+    m "I don't understand what I've done wrong..."
+
+    "One of the bad boys pushes you. You don't understand what's going on."
+
+    menu:
+        "So you..."
+
+        "You shove his hand out of the way.":
+            "You quickly shove his hand and you run to your class."
+            hide 2 falar
+            show 3 normal
+            "Avoiding further contacts."
+            hide 3 normal
+
+        "You don’t do anything.":
+            "The fear stops you to make any move."
+            "He pushes you."
+            "However, Mr. Smith arrives and stop the fight."
+            hide 2 falar
+            show 4 normal
+            "It looks like Mr. Smith is taking a really serious conversation with Nelson and Peter. He makes a sign for them to leave and they go."
+            hide 4 normal
+            "After that, you too go to the class."
+
+    m "Well... Let's go to the class then..."
+
+    show picture_5
+
+    show 5 normal
+
+    m "It looks like we have a new student in the class. Mr. Smith is introducing her to us."
+
+    m "I wonder what is her problem for her to end up in a special student's class."
+
+    hide 5 normal
+
+    show 6 normal
+
+    "She's coming in your direction."
+
+    menu:
+        "She asks you something, however you don't understand."
+
+        "Grab your notebook and write that you can't listen.":
+            "you grab your notebook"
+
+        "Stay quiet and pretend it's nothing with you.":
+            "You prefere to ignore."
+            hide 6 normal
+            show 7 normal
+            e "She doesn't listen... But you can sit next to me if you want."
+            "The new student sits next to Emily."
+            hide 7 normal
+            "You prefer to ignore her because you had the feeling that she is super popular."
+            "Too popular to be with you."
+            "You would just be dumb if you believe that you two would be friends."
+            "You don't have a clue of why she was transfered to your class, after all, she looks like a miss perfect."
+            "The classes are always boring to you. You just stare there at Mr. Smith doing sign language and try to understand everything."
+            "It would be much easier if you could just listen to him."
+            "After what looked like an eternity, this boring class ends."
+            show 9 normal
+            menu:
+                "You're about to leave the class. However, Mr. Smith makes a signal to call you."
+
+                "Pretend that you haven't seen him and leave.":
+                    "You're in a little hurry to go out and honestly you don't want to talk to Mr. Smith."
+                    "Then you leave the class and you pretend that you haven't seen him."
+                    hide 9 normal
+
+                "Go to him and see what he wants.":
+                    s "I've noticed that you haven't been so well this days. Do you want to talk?"
+                    menu:
+                        "Say that everything it's ok and leave.":
+                            "You say that everything is alright, you're just  having trouble sleeping and you ask if you can leave."
+                            "When Mr. Smith gave you permission for that you left."
+                            hide 9 normal
+
+                        "Talk about it with Mr. Smith.":
+                            m "Well, maybe he can help..."
+                            menu:
+                                "Sometimes I feel like I've always been put aside and like everyone is making fun of me.":
+                                    s "Why are you saying that? I think that you fit perfectly in the class."
+                                    m "I'm not talking about that..."
+                                    s "Hmm... I think I understood. But you know..."
+                                    m "WELL MR. SMITH... Thank you for your time but I really have to go."
+                                    m "See you tomorrow."
+                                    hide 9 normal
+
+
+                                "I've been a little unmotivated. Just that.":
+                                    s "So, what do you suggest me to do to make the classes better?"
+                                    menu:
+                                        "I think that I'm the problem here...":
+                                            s "Don’t say that. Look…"
+                                            m "WELL MR. SMITH... Thank you for your time but I really have to go. See you tomorrow."
+
+                                        "You could try to make more interactive classes":
+                                            s "Hmm... you know, that is a great idea Maya! Maybe I could catch more the students attention that way. I'll try to plan tomorrow's lesson then."
+                                            s "See you tomorrow Maya. And thanks for the advice!"
+                                    hide 9 normal
+
+                            "You quickly leave the class and go to your locker."
+
+
+            show picture_6
+            "You're in you're locker searching for random things. Just waiting to time goes by."
+            "You feel something on your shoulder."
+            menu:
+                "See who's touching you.":
+                    "There is your childhood friend, Frederic."
+
+            show picture_4
+            show 10 normal
+            f "I heard that Joe will make one more of her famous parties this friday."
+            m "We should go, at least we'll meet new people and we'll be 'normal teenagers'"
+            hide 10 normal
+            show 10 constrangido
+            f "Do you think? But... we weren't invited."
+            m "So what?! Most of the people that will go weren't invited as well. Come on, don't be like that!"
+            f "Then we should go..."
+            f "I guess...?!"
+            m "Good, don't forget to pick me up friday."
+            f "Nice, well I should go to class."
+            f "See you around."
+            hide 10 constrangido
+            "You stay alone once again with your thoughts."
+
+            show picture_2
+            with dissolver
+            "Finally one more day of school ended and you arrive at home. Unwilling to do anything (as always). You just want to lay on your bed and forget about your problems."
+
+
+    # This ends the game.
+
+    return
